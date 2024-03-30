@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>    
+    <br>
+    <h1  id= "title">Roman Numeral Converter</h1>
+    <br>
+    
+        
+        <div class="RtoD">
+            <h2 >Roman Numeral to Decimal</h2>
+            <input type="text"  id="RtoD" placeholder="Enter Roman Numerals" />
+            <button type="button" onclick="RtoD()">Convert</button>
+            <div id="decimalResult"></div>
+        </div>
+        
+        <div class="DtoR">
+            <h2 >Roman Numeral to Decimal</h2>
+            <input type="text" id="DtoR" placeholder="Enter Decimals up to 3,999" />
+            <button type="button" onclick="DtoR()">Convert</button>
+            <div id="romanResult"></div>
+        </div>
+        <br><br>
+        <h2>Upload Image</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadImage()">Upload</button>
+        <div id="result"></div>
+
+    <br><br><br>
+ 
+</body>
+<footer></footer>
+<script src="{{ url_for('static', filename='index.js') }}"></script>
+</html>

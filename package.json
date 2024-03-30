@@ -1,0 +1,12 @@
+{
+  "name": "converter",
+  "version": "1.0.0",
+  "description": "Decimal to Roman Numeral and Roman Numeral to Decimal Converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

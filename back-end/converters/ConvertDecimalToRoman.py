@@ -1,8 +1,9 @@
-from RomanNumeralConverter import RomanNumeralConverter
+from converters.RomanNumeralConverter import RomanNumeralConverter
 
 class ConvertDecimalToRoman(RomanNumeralConverter):
     # override convert_to_roman_numeral from RomanNumeralConverter
     def convert_to_roman_numeral(self, decimal):
+        decimal = int(decimal)
         roman_output = ''
         # The input should not go over 3999
         if decimal > 3999:
@@ -14,15 +15,15 @@ class ConvertDecimalToRoman(RomanNumeralConverter):
             # for 1, 10 , 100, 1000
             if curr_std_decimal_str[0] == str(1):
                 if curr_std_decimal == 100:
-                    if decimal_str[0] == str(4):
+                    if decimal_str[0] == str(4) and len(decimal_str) == 3:
                         decimal -= 400
                         roman_output += 'CD'
-                if curr_std_decimal == 10:
-                    if decimal_str[0] == str(4):
+                elif curr_std_decimal == 10:
+                    if decimal_str[0] == str(4) and len(decimal_str) == 2:
                         decimal -= 40
                         roman_output += 'XL'
-                if curr_std_decimal == 1:
-                    if decimal_str[0] == str(4):
+                elif curr_std_decimal == 1:
+                    if decimal_str[0] == str(4) and len(decimal_str) == 1:
                         decimal -= 4
                         roman_output += 'IV'
                 while curr_std_decimal <= decimal:
@@ -31,15 +32,15 @@ class ConvertDecimalToRoman(RomanNumeralConverter):
             # for  5, 50, 500          
             elif curr_std_decimal_str[0] == str(5):
                 if curr_std_decimal == 500:
-                    if decimal_str[0] == str(9):
+                    if decimal_str[0] == str(9) and len(decimal_str) == 3:
                         decimal -= 900
                         roman_output += 'CM'
                 if curr_std_decimal == 50:
-                    if decimal_str[0] == str(9):
+                    if decimal_str[0] == str(9) and len(decimal_str) == 2:
                         decimal -= 90
                         roman_output += 'XC'
                 if curr_std_decimal == 5:
-                    if decimal_str[0] == str(9):
+                    if decimal_str[0] == str(9) and len(decimal_str) == 1:
                         decimal -= 9
                         roman_output += 'IX'
                 while curr_std_decimal <= decimal:
@@ -47,16 +48,3 @@ class ConvertDecimalToRoman(RomanNumeralConverter):
                         roman_output += self.decimal_key[curr_std_decimal]
                     
         return roman_output
-            
-
-
-# converter = ConvertDecimalToRoman()
-
-# test_values = [1, 33, 135, 1343, 455, 500, 1000, 3999]
-
-# for value in test_values:
-#     try:
-#         result = converter.convert_to_roman_numeral(value)
-#         print(f"Decimal: {value}, Roman: {result}")
-#     except ValueError as e:
-#         print(f"Error: {e}")
