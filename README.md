@@ -6,8 +6,8 @@
 
 ### Dependencies
 
-- Flask: Used for building the backend server and handling HTTP requests.
-- Flask-CORS: Used to enable Cross-Origin Resource Sharing (CORS) in the Flask application.
+- Flask
+- Flask-CORS
 - Boto3: Used for interacting with the AWS services, particularly for image processing with Amazon Textract.
 
 ### Implementation Details
