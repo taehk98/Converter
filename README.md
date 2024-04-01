@@ -9,6 +9,7 @@
 - Flask
 - Flask-CORS
 - Boto3: Used for interacting with the AWS services, particularly for image processing with Amazon Textract.
+- Amazon access and secret keys
 
 ### Implementation Details
 
